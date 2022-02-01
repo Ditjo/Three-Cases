@@ -11,6 +11,7 @@ namespace Three_Cases
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World");
+            Console.WriteLine("Going Dark");
             Console.ReadKey();
         }
     }
