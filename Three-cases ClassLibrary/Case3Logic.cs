@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Three_Cases
+namespace Three_cases_ClassLibrary
 {
-    internal class Case1
+    public class Case3Logic
     {
     }
 }

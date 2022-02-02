@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Three_Cases
 {
-    internal class Case2
+    public class Case3Visual
     {
     }
 }

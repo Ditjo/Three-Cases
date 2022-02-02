@@ -41,10 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Case1.cs" />
-    <Compile Include="Case2.cs" />
-    <Compile Include="Case3.cs" />
+    <Compile Include="Case1Logic.cs" />
+    <Compile Include="Case2Logic.cs" />
+    <Compile Include="Case3Logic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProgramLogic.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

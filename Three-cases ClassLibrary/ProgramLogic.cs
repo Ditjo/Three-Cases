@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Three_cases_ClassLibrary
 {
-    public class Case1
+    public class ProgramLogic
     {
+
     }
 }

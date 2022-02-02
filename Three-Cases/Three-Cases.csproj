@@ -43,14 +43,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Case1.cs" />
-    <Compile Include="Case2.cs" />
-    <Compile Include="Case3.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Case1Visual.cs" />
+    <Compile Include="Case2Visual.cs" />
+    <Compile Include="Case3Visual.cs" />
+    <Compile Include="ProgramVisual.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Three-cases ClassLibrary\Three-cases ClassLibrary.csproj">
+      <Project>{6d99aa5a-5f21-48f7-8265-5f0c99a83484}</Project>
+      <Name>Three-cases ClassLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
