@@ -24,7 +24,7 @@ namespace Three_Cases
             }
             else if(program == "2")
             {
-                //Case2Visual
+                Case2Visual.Case2();
             }
             else
             {
