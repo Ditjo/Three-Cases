@@ -12,18 +12,20 @@ namespace Three_cases_ClassLibrary
         //inkomne information fra Case2Visual
         public static string Dans(string navn1, string navn2, int point1, int point2)
         {
-            //Her bliver der kaldt på en constructor som opretter en ny danser og indsætter onformationerne.
-            DancerPoint Danser1 = new DancerPoint(navn1, point1);
-            DancerPoint Danser2 = new DancerPoint(navn2, point2);
+            
+                //Her bliver der kaldt på en constructor som opretter en ny danser og indsætter onformationerne.
+                DancerPoint Danser1 = new DancerPoint(navn1, point1);
+                DancerPoint Danser2 = new DancerPoint(navn2, point2);
 
-            //pointende bliver lagt sammen.
-            point1 = Danser1.point + Danser2.point;
-            //her bliver den afsluttende sætning sat sammen.
-            navn1 = Danser1.navn + " & " + Danser2.navn + " " + point1 + " point";
-            //her bliver den retunedret. 
-            return navn1;
-
+                //pointende bliver lagt sammen.
+                int point = Danser1.point + Danser2.point;
+                //her bliver den afsluttende sætning sat sammen.
+                string navn = Danser1.navn + " & " + Danser2.navn + " " + point + " point";
+                //her bliver den retunedret. 
+                return navn;
+            }
         }
+        
         //dette er en ny class
         public class DancerPoint
     {
@@ -41,4 +43,5 @@ namespace Three_cases_ClassLibrary
         }
     }
 }
-}
+
+

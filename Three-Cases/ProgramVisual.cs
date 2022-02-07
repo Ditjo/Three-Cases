@@ -10,13 +10,17 @@ namespace Three_Cases
     {
         static void Main(string[] args)
         {
-            //vælg hvilket program man vil starte.
+            string program = "0";
+
+            while (program == "1" || program == "2")
+                //vælg hvilket program man vil starte.
+                Console.Clear();
             Console.WriteLine();
             Console.WriteLine("Vælg program du vil køre:");
             Console.WriteLine("1: Fodbold program");
             Console.WriteLine("2: Danse program");
             //valget bliver lagt i en string.
-            string program = Console.ReadLine();
+            program = Console.ReadLine();
 
             if (program == "1")
             {
