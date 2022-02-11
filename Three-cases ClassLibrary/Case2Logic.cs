@@ -21,7 +21,7 @@ namespace Three_cases_ClassLibrary
                 int point = Danser1.point + Danser2.point;
                 //her bliver den afsluttende sætning sat sammen.
                 string navn = Danser1.navn + " & " + Danser2.navn + " " + point + " point";
-                //her bliver den retunedret. 
+                //her bliver den retuneret. 
                 return navn;
             }
         }

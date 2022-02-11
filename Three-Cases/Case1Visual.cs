@@ -29,7 +29,7 @@ namespace Three_Cases
                 Three_cases_ClassLibrary.Case1Logic.Fodbold(afl, mål);
 
                 //her bliver kommer resultatet retur og det bliver lagt i en string
-                resultat = (Three_cases_ClassLibrary.Case1Logic.Fodbold(afl, mål));
+                resultat = Three_cases_ClassLibrary.Case1Logic.Fodbold(afl, mål);
 
                 //resultatet bliver udskrevet. 
                 Console.WriteLine(resultat);

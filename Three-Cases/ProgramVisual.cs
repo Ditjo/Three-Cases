@@ -19,6 +19,7 @@ namespace Three_Cases
             Console.WriteLine("Vælg program du vil køre:");
             Console.WriteLine("1: Fodbold program");
             Console.WriteLine("2: Danse program");
+            Console.WriteLine("3: Password");
             //valget bliver lagt i en string.
             program = Console.ReadLine();
 
@@ -30,9 +31,9 @@ namespace Three_Cases
             {
                 Case2Visual.Case2();
             }
-            else
+            else if(program == "3")
             {
-
+                Case3Visual.Case3();
             }
             
 
