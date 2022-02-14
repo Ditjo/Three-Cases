@@ -4,34 +4,76 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Three_cases_ClassLibrary;
+using System.IO;
 
 namespace Three_Cases
 {
     public class Case3Visual
     {
+        
+        public static void IsUser()
+        {
+            string Brugernavn, password, UserPassFil;
+            //starter med at lave et Password object for at kunne tilgå password godkendelsen.
+            Case3Logic password_obj = new Case3Logic();
+
+            //Der bliver indlæst fra UserPassword.txt.
+            //Hvis den er tom så skal man oprette en ny bruger og password.
+            UserPassFil = File.ReadAllText(@"C:\Users\madnie\Documents\Opgaver\C# Cases\Visual Studio Programming\Three-Cases\UserPassword.txt");
+            if (string.IsNullOrEmpty(UserPassFil))
+            {
+                Console.Clear();
+                Console.WriteLine("Opret en ny bruger.");
+                Console.Write("Brugernavn: ");
+                Brugernavn = Console.ReadLine();
+
+                //Passwordet bliver oprettet, hvis det kan godkendes.
+                //hvis det ikke kan godkendes skal man indtaste et nyt password.
+                do
+                {
+                    Console.Write("Password: ");
+                    password = Console.ReadLine();
+                    if(password_obj.Pass(password, Brugernavn) == false)
+                    {
+                        Console.WriteLine("Ikke godkendt Password");
+                    }
+
+                } while (password_obj.Pass(password, Brugernavn) == false);
+
+                //efter godkendelse bliver det indsrkevet i UserPassword.txt
+                UserPassFil = Brugernavn + " , " + password;
+                File.WriteAllText(@"C:\Users\madnie\Documents\Opgaver\C# Cases\Visual Studio Programming\Three-Cases\UserPassword.txt", UserPassFil);
+            }
+        }
         public static void Case3()
         {
-            
-            Console.Clear();
-            Console.Write("Skriv password: ");
-            string password = Console.ReadLine();
+            string Brugernavn, password, UserPassFil;
 
             Case3Logic password_obj = new Case3Logic();
 
-            var result = password_obj.Lengt(password);
+            string[] Lines = File.ReadAllLines(@"C:\Users\madnie\Documents\Opgaver\C# Cases\Visual Studio Programming\Three-Cases\UserPassword.txt");
 
-            Console.WriteLine(result);
-            Console.ReadKey();
+            do
+            {
+                Console.Write("Nyt Password: ");
+                password = Console.ReadLine();
 
-            result = password_obj.Tal(password);
+                foreach (string Line in Lines)
+                {
+                    if (Line.Contains(password))
+                    {
 
-            Console.WriteLine(result);
-            Console.ReadKey();
+                    }
+                }
 
-            result = password_obj.Letter(password);
+                if (password_obj.Pass(password, Brugernavn) == false)
+                {
+                    Console.WriteLine("Ikke godkendt Password");
+                }
 
-            Console.WriteLine(result);
-            Console.ReadKey();
+            } while (password_obj.Pass(password, Brugernavn) == false);
+
         }
+
     }
 }

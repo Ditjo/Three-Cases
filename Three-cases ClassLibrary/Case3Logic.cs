@@ -3,51 +3,68 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Three_cases_ClassLibrary
 {
     public class Case3Logic
     {
-        public string Lengt(string password)
+        public bool Pass(string password, string Brugernavn)
+        {
+            Case3Logic password_obj = new Case3Logic();
+            if (password_obj.Length(password) && password_obj.Letter(password) && password_obj.Tegn(password) && password_obj.Tal(password) && password_obj.Mellemrum(password) && password_obj.Brugernavn(password, Brugernavn) == true)
+            {
+                return true; //hvis alle ovenstående kriterier er true så retunere den true som derved siger at alle kriterer er opfyldt
+            }
+                return false;//ellers for man en false
+        }
+        public bool Length(string password)
         //er passwordet 12 karaktere eller længere.
         {
             if (password.Length >= 12)
             {
-                return "Godkendt";
+                return true; //"Godkendt længde";
             }
             else
-                return "Error to short passeword length!";
+                return false; //"Error to short passeword length!";
         }
 
-        public string Letter(string password)
+        public bool Letter(string password)
         //Både store og små bogstaver.
         {
             if (password.Equals(password.ToUpper()) || password.Equals(password.ToLower()))
             {
-                return "Godkendt Bogstaver";
+                return false; // "mangler upper eller lower case";
             }
             else
             {
-                return "mangler upper eller lower case";
+                return true; // "Godkendt Bogstaver";
             }
         }
 
-        /*public bool Tegn(string password)
+        public bool Tegn(string password)
             //Benyt min et special tegn
         {
-            return password;
-        }*/
+            for (int i = 0; i < password.Length; i++)
+            {
+                if (char.IsLetterOrDigit(password[i]) == false)
+                {
+                    return true; // "Godkendt special tegn";
+                }
+            }
+            return false; // "mangler special tegn";
+        }
 
-        public string Tal(string password)
+        public bool Tal(string password)
         //ingen tal i starten eller slutningen af passwordet 
         {
             bool tal = char.IsDigit(password[0]) || char.IsDigit(password[password.Length-1]);
             if (tal == false)
             {
-                return "Godkendt tal";
+                return true; // "Godkendt tal";
             }
             else
-                return "Tal i start eller slut";
+                return false; // "Tal i start eller slut";
         }
 
         public bool Mellemrum(string password)
@@ -55,16 +72,29 @@ namespace Three_cases_ClassLibrary
         {
             if (password.Contains(" "))
             {
-                return false;
+                return false; // "der er mellemrum. Ikke tilladt";
             }
             else
-                return true;
+                return true; // "Godkendt mellemrum";
         }
 
-        /*public string Brugernavn(string password)
+        public bool Brugernavn(string password, string Brugernavn)
             //burgernavn og password må ikke være det samme.
         {
-            return password;
+            if (Brugernavn.ToLower() != password.ToLower())
+            {
+                return true;
+            }
+            return false;
+        }
+        /*public bool BrugtPassword(string password)
+        {
+            
+            string[] Lines = File.ReadAllLines(@"C:\Users\madnie\Documents\Opgaver\C# Cases\Visual Studio Programming\Three-Cases\UserPassword.txt");
+
+
         }*/
     }
 }
+
+//(password.ToLower().Equals(Brugernavn.ToLower()))

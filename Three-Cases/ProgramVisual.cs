@@ -12,6 +12,8 @@ namespace Three_Cases
         {
             string program = "0";
 
+            Case3Visual.IsUser();
+
             while (program == "1" || program == "2")
                 //vælg hvilket program man vil starte.
                 Console.Clear();
@@ -19,7 +21,7 @@ namespace Three_Cases
             Console.WriteLine("Vælg program du vil køre:");
             Console.WriteLine("1: Fodbold program");
             Console.WriteLine("2: Danse program");
-            Console.WriteLine("3: Password");
+            Console.WriteLine("3: Ændre Login");
             //valget bliver lagt i en string.
             program = Console.ReadLine();
 
