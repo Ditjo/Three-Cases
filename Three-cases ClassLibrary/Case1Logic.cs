@@ -8,48 +8,44 @@ namespace Three_cases_ClassLibrary
 {
     public class Case1Logic
     {
-        public static string Fodbold(string afl, string mål)
+        public static string Fodbold(int afl, string mål)
         {
-            //mål bliver lavet til lower. Derved er det ligemeget om det bliver indskrevet med stort eller småt.
+            //Den inkomne information bliver ændret.
+            string huh;
+
             mål = mål.ToLower();
-            //afl bliver konverteret fra en string til en int. 
-            int intafl = Convert.ToInt32(afl);
 
             //Er der mål. Hvis der er, bliver der udskrevet Olé Olé Olé og resten bliver sprunget over.
             if (mål == "mål")
             {
                 //afl bliver retuneret med Olé Olé Olé.
-                return afl = "Olé Olé Olé";
+                return "Olé Olé Olé";
             }
             else
             {
-                //hvis ikke ovenstående kører else
-                //hvis intafl er større end eller ligmed 10 så er det High Five - Jubel!!!
-                if (intafl >= 10)
+                //hvis der ikke er mål.
+                //Er der 10 eller flere afleveringer.
+                if (afl >= 10)
                 {
-                    return afl = "High Five - Jubel!!!";
+                    return "High Five - Jubel!!!";
                 }
-                //Ellers hvis den er større end 0 så bliver der udskrevet Huh i den givende mængde
-                else if (intafl > 0)
+                //er der mellem 0 og 10 afleveringer
+                else if (afl > 0)
                 {
-                    //afl bliver tømt
-                    afl = "";
+                    huh = "";
 
-                    //den går ind i en while loop hvor den køre indtil intafl er mindre end 0. 
-                    while (intafl > 0)
+                    //Huh sætning bliver lavet her.
+                    while (afl > 0)
                     {
-                        //hver omgang bliver der trukket 1 fra
-                        intafl--;
-                        //og der bliver lagt en ekstra Huh til.
-                        afl = afl + " Huh!";
+                        afl--;
+                        huh = huh + " Huh!";
                     }
-                    //efterfølgende retunere den
-                    return afl;
+                    return huh;
                 }
-                //hvis ikke nogen af de ovenstående retunere den med Shh
+                //hvis der ikke er nogle afleveringer så shh.
                 else
                 {
-                    return afl = "Shh";
+                    return "Shh";
                 }
             }
             

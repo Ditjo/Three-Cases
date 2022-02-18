@@ -10,13 +10,15 @@ namespace Three_cases_ClassLibrary
     public class Case3Logic
     {
         public bool Pass(string password, string Brugernavn)
+        //Check for at se om alle kriterier opfyldt.
         {
             Case3Logic password_obj = new Case3Logic();
+
             if (password_obj.Length(password) && password_obj.Letter(password) && password_obj.Tegn(password) && password_obj.Tal(password) && password_obj.Mellemrum(password) && password_obj.Brugernavn(password, Brugernavn) == true)
             {
                 return true; //hvis alle ovenstående kriterier er true så retunere den true som derved siger at alle kriterer er opfyldt
             }
-                return false;//ellers for man en false
+                return false;//ellers for man en false, dvs en af kriterierne er ikke opfyldt.
         }
         public bool Length(string password)
         //er passwordet 12 karaktere eller længere.
@@ -26,7 +28,7 @@ namespace Three_cases_ClassLibrary
                 return true; //"Godkendt længde";
             }
             else
-                return false; //"Error to short passeword length!";
+                return false; //"Ikke godkendt!";
         }
 
         public bool Letter(string password)
@@ -58,8 +60,7 @@ namespace Three_cases_ClassLibrary
         public bool Tal(string password)
         //ingen tal i starten eller slutningen af passwordet 
         {
-            bool tal = char.IsDigit(password[0]) || char.IsDigit(password[password.Length-1]);
-            if (tal == false)
+            if (char.IsDigit(password[0]) || char.IsDigit(password[password.Length - 1]) == false)
             {
                 return true; // "Godkendt tal";
             }
@@ -79,22 +80,16 @@ namespace Three_cases_ClassLibrary
         }
 
         public bool Brugernavn(string password, string Brugernavn)
-            //burgernavn og password må ikke være det samme.
+            //brugernavn og password må ikke være det samme.
         {
             if (Brugernavn.ToLower() != password.ToLower())
             {
-                return true;
+                return true; //De er ikke det samme. Godkendt.
             }
-            return false;
+                return false; // De er det samme. Ikke godkendt.
         }
-        /*public bool BrugtPassword(string password)
-        {
-            
-            string[] Lines = File.ReadAllLines(@"C:\Users\madnie\Documents\Opgaver\C# Cases\Visual Studio Programming\Three-Cases\UserPassword.txt");
-
-
-        }*/
+        
     }
 }
 
-//(password.ToLower().Equals(Brugernavn.ToLower()))
+
