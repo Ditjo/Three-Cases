@@ -34,6 +34,7 @@ namespace Three_Cases
                 //hvis det ikke kan godkendes skal man indtaste et nyt password.
                 do
                 {
+                    Console.Clear();
                     Console.WriteLine("Password skal være:");
                     Console.WriteLine("~ Min 12 karaktere lang");
                     Console.WriteLine("~ Store og må bogstaver");
@@ -47,6 +48,7 @@ namespace Three_Cases
                     if (password_obj.Pass(password, Brugernavn) == false)
                     {
                         Console.WriteLine("Ikke godkendt Password");
+                        Console.ReadKey();
                     }
 
                 } while (password_obj.Pass(password, Brugernavn) == false);
@@ -61,7 +63,7 @@ namespace Three_Cases
         {
             //Man skal logge ind før man kan få adgang til programmerne. 
             //denne metode udfører dette job.
-            string brugernavn, inputbruger,password, inputpassword;
+            string brugernavn, inputbruger, password, inputpassword;
 
             //brugernavn og password bliver hentet ind i et array.
             string[] Lines = File.ReadAllLines(@"C:\Users\madnie\Documents\Opgaver\C# Cases\Visual Studio Programming\Three-Cases\UserPassword.txt");
