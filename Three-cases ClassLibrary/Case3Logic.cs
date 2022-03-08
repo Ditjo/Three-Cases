@@ -49,7 +49,7 @@ namespace Three_cases_ClassLibrary
         {
             for (int i = 0; i < password.Length; i++)
             {
-                if (char.IsLetterOrDigit(password[i]) == false)
+                if (!char.IsLetterOrDigit(password[i]))
                 {
                     return true; // "Godkendt special tegn";
                 }
@@ -60,7 +60,7 @@ namespace Three_cases_ClassLibrary
         public bool Tal(string password)
         //ingen tal i starten eller slutningen af passwordet 
         {
-            if (char.IsDigit(password[0]) || char.IsDigit(password[password.Length - 1]) == false)
+            if (!char.IsDigit(password[0]) && !char.IsDigit(password[password.Length - 1]))
             {
                 return true; // "Godkendt tal";
             }

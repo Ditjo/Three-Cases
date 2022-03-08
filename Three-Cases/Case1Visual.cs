@@ -22,14 +22,14 @@ namespace Three_Cases
                 Console.Write("Hvor mange afleveringer er der lavet: ");
                 //det bliver lagt i en string
                 afl = Convert.ToInt32(Console.ReadLine());
-
+                
                 //Er der mål. Hvis der er mål skriv mål.
                 Console.Write("Har der været mål(Indtast mål hvis ja)");
                 mål = Console.ReadLine();
-
+                
                 //Methoden Fodbold bliver brugt her og og hvad der skal siges ender i resultat.
                 resultat = Case1Logic.Fodbold(afl, mål);
-
+                
                 //resultatet bliver udskrevet. 
                 Console.WriteLine(resultat);
 
