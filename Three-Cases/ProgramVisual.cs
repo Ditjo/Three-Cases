@@ -48,7 +48,6 @@ namespace Three_Cases
                         Console.ReadKey();
                     }
                 } while (program != "0");
-           
 
         }
     }
